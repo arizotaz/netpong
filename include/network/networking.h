@@ -3,7 +3,7 @@
 
 #include <netinet/in.h>
 
-#define MAX_SERVER_CLIENTS 2
+#define MAX_SERVER_CLIENTS 1
 
 typedef struct {
     int server_fd;
