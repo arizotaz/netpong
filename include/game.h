@@ -3,6 +3,8 @@
 
 #include "network/networking.h"
 
+#define NUM_OF_BALLS 2
+
 
 // Setup game board
 #define TOP_ROW 4
@@ -18,6 +20,8 @@ typedef struct
     int port;
 
 } GameData;
+
+long GetCurrentMS();
 
 /**
  * Setups the curses terminal environment
@@ -45,7 +49,7 @@ void DrawWalls(GameData);
 /**
  * Draws the scoreboard and header
  */
-void DrawHeader(GameData);
+void DrawHeader(GameData* data, int* scores, int numOfBalls);
 
 /**
  * Creates text at a location on screen

@@ -25,9 +25,7 @@ void DrawWalls(GameData data)
 
     refresh();
 }
-void DrawHeader(GameData data)
+void DrawHeader(GameData* data, int* scores, int numOfBalls)
 {
-    move(TOP_ROW - 2, LEFT_COL);
-    addch('P');
-    addch('0' + (data.playerNumber + 1));
+    mvprintw(TOP_ROW-1, LEFT_COL, "SCORES:  P1: %d     P2: %d                       Balls Left: %d", scores[0],scores[1],numOfBalls);
 }

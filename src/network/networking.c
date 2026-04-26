@@ -6,8 +6,12 @@
 #include <arpa/inet.h>
 #include <netdb.h>
 
+
+static Server *g_server = NULL;
+
 Server StartServer(int port) {
     Server s;
+    g_server = &s;
     s.clientID = 0;
     s.client_count = 0;
 
@@ -22,6 +26,9 @@ Server StartServer(int port) {
     s.address.sin_family = AF_INET;
     s.address.sin_addr.s_addr = INADDR_ANY; // listen on all interfaces
     s.address.sin_port = htons(port);
+
+    signal(SIGINT, KillServer);  // ctrl+c
+    signal(SIGTERM, KillServer);    
 
     // Bind Port
     if (bind(s.server_fd, (struct sockaddr *)&s.address, sizeof(s.address)) < 0) {
@@ -46,6 +53,15 @@ void RemoveClient(Server* s, int index) {
     close(s->clients[index]);
     s->clients[index] = s->clients[s->client_count - 1];
     s->client_count--;
+}
+
+void KillServer() {
+    close(g_server->server_fd);
+
+    int c = g_server->client_count;
+    for (int i = 0; i < c; ++i) {
+        RemoveClient(g_server,i);
+    }
 }
 
 Client StartClient(char* host, int port) {    

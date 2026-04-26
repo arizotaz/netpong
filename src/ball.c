@@ -13,8 +13,8 @@ Ball CreateBall(GameData* gd)
     b.lastCharX = 0;
     b.lastCharY = 0;
 
-    b.vx = -0.2;
-    b.vy = 0.2;
+    b.vx = 0;
+    b.vy = 0;
 
     return b;
 }
@@ -108,6 +108,6 @@ void ServeBall(Ball* ball, GameData* gd) {
 
 
     ball->vx = -0.2;
-    ball->vy = 0.2;
+    ball->vy = 0.09;
     if (!gd->host) ball->vx *= -1;
 }

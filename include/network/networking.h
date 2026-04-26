@@ -23,6 +23,8 @@ Server StartServer(int port);
  */
 void RemoveClient(Server* s, int index);
 
+void KillServer();
+
 typedef struct {
     int client_fd;
     struct sockaddr_in address;
