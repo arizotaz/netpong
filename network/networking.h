@@ -3,8 +3,9 @@
 
 #include <netinet/in.h>
 
+#define MAX_SERVER_CLIENTS 2
+
 typedef struct {
-        const int max_clients;
     int server_fd;
     struct sockaddr_in address;
     int clients[2];
@@ -19,7 +20,6 @@ typedef struct {
     int client_fd;
     struct sockaddr_in address;
 } Client;
-
 
 Client StartClient(char* host, int port);
 

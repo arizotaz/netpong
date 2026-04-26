@@ -7,8 +7,9 @@
 #include <netdb.h>
 
 Server StartServer(int port) {
-    Server s = {2};
+    Server s;
     s.clientID = 0;
+    s.client_count = 0;
 
 
     // Create Socket

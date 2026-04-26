@@ -10,6 +10,8 @@
                 "-g",
                 "main.c",
                 "court.c",
+                "gameServer.c",
+                "term.c",
                 "network/*.c",
                 "-o",
                 "netpong",
