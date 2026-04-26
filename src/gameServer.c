@@ -35,8 +35,6 @@ void CreateGameServer(Server* serv, GameData* gd)
     FD_ZERO(&fds);
     FD_SET(s.server_fd, &fds);
 
-    struct timeval tv = { 0, 0 }; // non-blocking check
-
     SetupTermWin();
 
     DrawWalls(*gd);

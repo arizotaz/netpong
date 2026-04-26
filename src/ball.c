@@ -51,7 +51,6 @@ void UpdateBall(Ball* ball, Paddle* p)
 
 int CheckBallLose(GameData* gd, Ball* ball)
 {
-    int loseCol = 0;
     if (gd->host) {
         if (ball->x <= LEFT_COL) {
             return true;
