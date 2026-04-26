@@ -1,32 +1,33 @@
 # Compiler and flags
 CC = gcc
 CFLAGS = -Wall -g
-
-NETPONG_SRC = main.c $(wildcard src/*.c) $(wildcard src/network/*.c)
-
 LIBS = -lncurses
 
+# Source files
+NETPONG_SRC = main.c $(wildcard src/*.c) $(wildcard src/network/*.c)
 
-# Object files
-NETPONG_OBJ = $(NETPONG_SRC:.c=.o)
+# Object files in build/
+NETPONG_OBJ = $(patsubst %.c,build/%.o,$(NETPONG_SRC))
 
 # Default target
 all: netpong
 
-# Build NetPong
+# Link
 netpong: $(NETPONG_OBJ)
-	$(CC) $(CFLAGS) -o netpong $(NETPONG_OBJ) $(LIBS)
+	$(CC) $(CFLAGS) -o $@ $(NETPONG_OBJ) $(LIBS)
 
-# Generic compile rule
-%.o: %.c smsh.h varlib.h
-	$(CC) $(CFLAGS) -c $<
+# Compile rule (FULL PATH match)
+build/%.o: %.c
+	@mkdir -p $(dir $@)
+	$(CC) $(CFLAGS) -c $< -o $@
 
-# Clean up
+# Clean
 clean:
-	rm -f *.o netpong network/*.o
+	rm -rf build netpong
 
+# Run targets
 Server:
-	./netpong
+	./netpong 2001
 
 Client:
-	./netpong -c 127.0.0.1
+	./netpong 127.0.0.1 2001

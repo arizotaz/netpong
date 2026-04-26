@@ -2,3 +2,4 @@
 netpong
 netpong.dSYM/
 netpong.c
+build/*
