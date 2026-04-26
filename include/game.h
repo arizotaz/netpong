@@ -36,7 +36,7 @@ void CreateGameServer(Server* serv,GameData*gd);
 /**
  * Creates the Client game loop
  */
-void RunGameClient(Client* c);
+void RunGameClient(Client* c,GameData*gd);
 
 /**
  * Draws the walls based on player 1 or 2

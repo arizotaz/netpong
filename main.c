@@ -52,7 +52,7 @@ int main(int argc, char* argv[])
         printf("Connecting to %s:%i\n", data.domain, data.port);
         Client c = StartClient(data.domain, data.port);
 
-        RunGameClient(&c);
+        RunGameClient(&c,&data);
 
         close(c.client_fd);
         return 0;
