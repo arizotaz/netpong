@@ -14,7 +14,12 @@
             ],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
-            "environment": [],
+            "environment": [
+                {
+                    "name": "TERM",
+                    "value": "xterm-256color"
+                }
+            ],
             "externalConsole": false,
             "MIMode": "lldb",
             "setupCommands": [
@@ -30,6 +35,5 @@
                 }
             ]
         }
-
     ]
 }
