@@ -1,4 +1,4 @@
-#include "game.h"
+#include "../include/game.h"
 
 #include <curses.h>
 #include <signal.h>

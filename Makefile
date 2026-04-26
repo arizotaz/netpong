@@ -2,7 +2,7 @@
 CC = gcc
 CFLAGS = -Wall -g
 
-NETPONG_SRC = main.c term.c court.c gameServer.c $(wildcard network/*.c)
+NETPONG_SRC = main.c $(wildcard src/*.c) $(wildcard src/network/*.c)
 
 LIBS = -lncurses
 

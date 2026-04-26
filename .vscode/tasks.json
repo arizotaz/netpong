@@ -9,10 +9,8 @@
                 "-Wall",
                 "-g",
                 "main.c",
-                "court.c",
-                "gameServer.c",
-                "term.c",
-                "network/*.c",
+                "src/*.c",
+                "src/network/*.c",
                 "-o",
                 "netpong",
                 "-lncurses"
