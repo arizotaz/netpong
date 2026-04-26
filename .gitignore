@@ -3,3 +3,4 @@ netpong
 netpong.dSYM/
 netpong.c
 build/*
+*.DS_Store
