@@ -1,7 +1,7 @@
 # Compiler and flags
 CC = gcc
 CFLAGS = -Wall -g
-LIBS = -lncurses
+LIBS = -lncurses -lm
 
 # Source files
 NETPONG_SRC = main.c $(wildcard src/*.c) $(wildcard src/network/*.c)
