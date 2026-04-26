@@ -3,7 +3,7 @@
 
 #include "network/networking.h"
 
-#define NUM_OF_BALLS 2
+#define NUM_OF_BALLS 6
 
 
 // Setup game board
