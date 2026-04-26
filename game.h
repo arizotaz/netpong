@@ -7,16 +7,17 @@
 #define LEFT_COL 9
 #define RIGHT_COL 70
 
-struct GameData
+typedef struct
 {
+    int host;
     int playerNumber;
     char* domain;
     int port;
 
-};
+} GameData;
 
 
-void DrawWalls(struct GameData);
-void DrawHeader(struct GameData);
+void DrawWalls(GameData);
+void DrawHeader(GameData);
 
 #endif

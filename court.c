@@ -6,7 +6,7 @@
 #include <stdlib.h>
 #include <unistd.h>
 
-void DrawWalls(struct GameData data)
+void DrawWalls(GameData data)
 {
     for (int i = LEFT_COL; i <= RIGHT_COL; i++) {
         move(TOP_ROW, i);
@@ -25,7 +25,7 @@ void DrawWalls(struct GameData data)
 
     refresh();
 }
-void DrawHeader(struct GameData data)
+void DrawHeader(GameData data)
 {
     move(TOP_ROW - 2, LEFT_COL);
     addch('P');
